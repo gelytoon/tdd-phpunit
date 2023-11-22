@@ -20,6 +20,10 @@ class userAuthTest extends TestCase
     public function register(string $username, string $password, string $email, bool $expected) {
         $user = new userAuth();
 
+        /* //Si no comprobáramos previamente la existencia del email en la bd
+        $this->expectException(mysqli_sql_exception::class);
+        $this->expectExceptionMessage("Duplicate entry"); */
+
         //con Mock
         /* $user = $this->getMockBuilder(userAuth::class)->getMock();
         $user->method("register")->with($username, $password, $email)->willReturn($expected); */
